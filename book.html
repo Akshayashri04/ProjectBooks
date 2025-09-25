@@ -1,0 +1,26 @@
+<img src="/image/bookwings.jpg" alt="Book Image" height="300"/>
+<div *ngIf="book">
+  
+  <h2>{{ book.name }}</h2>
+  <p>Average Rating: {{ book.rating.toFixed(1) }}</p>
+
+  <h3>Give your feedback</h3>
+  <form (ngSubmit)="submitFeedback()">
+    <label>Rating (1–5):</label>
+    <input type="number" [(ngModel)]="newRating" name="rating" min="1" max="5" required />
+
+    <label>Review:</label>
+    <textarea [(ngModel)]="newReview" name="review" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Reviews</h3>
+  <div *ngFor="let r of book.reviews" class="review-card">
+    <p><strong>Rating:</strong> ⭐ {{ r.rating }}</p>
+    <p><strong>Review:</strong> {{ r.text }}</p>
+  </div>
+  <a [href]="book?.pdf" download class="download-btn">
+  📥 Download Book
+</a>
+</div>

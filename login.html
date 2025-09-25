@@ -1,0 +1,26 @@
+<div class="login-container">
+    <div class="logo">ReadHUB </div>
+    <div class="image">
+        <img src="/image/bookimg.jpg" alt="Book Image" height="300"/>
+    </div>
+
+
+    <div class="desc">
+        ReadHub is a digital platform designed for book lovers to discover, download, and review books in one place.
+         It serves as a hub where readers can explore a wide range of titles across genres, check authentic user reviews, 
+         and share their own reading experiences through ratings and feedback.
+    </div>
+    <div class="login-form">
+        <h2>Login Page</h2>
+    <form (ngSubmit)="onLogin()">
+      <label>Username: </label>
+      <input type="text" [(ngModel)]="username" name="username" required><br><br>
+      
+      <label>Password: </label>
+      <input type="password" [(ngModel)]="password" name="password" required><br><br>
+
+      <button type="submit">Login</button>
+    </form>
+  
+        </div>
+</div>
